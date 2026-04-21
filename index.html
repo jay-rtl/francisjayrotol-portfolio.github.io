@@ -1,399 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Francis Jay Rotol</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fussy Caterer Creations LLC</title>
 
-        /* Header */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-        .navbar-brand img.logo {
-            max-height: 40px;
-            margin-left: 10px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+    scroll-behavior: smooth;
+}
 
-        .navbar-light .navbar-nav .nav-link {
-            color: #333;
-            font-weight: bold;
-        }
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-        .navbar-light .navbar-nav .nav-link:hover {
-            color: #18bc9c;
-        }
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: gold;
+}
 
-        /* Home Section */
-        #home {
-            background-image: url('img/spring_break_background.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 20px;
-        }
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    opacity: 0.85;
+    transition: 0.3s;
+}
 
-        #home .content {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
+.nav-links a:hover {
+    color: gold;
+}
 
-        #home .content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1555244162-803834f70033') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
 
-        #home .content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+}
 
-        #home .content p.font-italic {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
 
-        @media (max-width: 768px) {
-            #home .content h1 {
-                font-size: 2.5rem;
-            }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+}
 
-            #home .content p {
-                font-size: 1rem;
-            }
+p {
+    font-size: 17px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
 
-            #home .content p.font-italic {
-                font-size: 1rem;
-            }
-        }
-        .certificate-section {
-            text-align: center;
-            margin: 20px;
-        }
-        .certificate-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .certificate-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .certificate-item {
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            width: 300px;
-            height: 400px;
-            overflow: hidden;
-        }
-        .certificate-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .certificate-item p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-        .certificate-item embed {
-            width: 100%;
-            height: 70%;
-            border: none;
-        }
+.btn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
 
+/* SECTIONS */
+section {
+    padding: 100px 10%;
+}
 
-    </style>
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sub {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    opacity: 0.8;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #161616;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    background: #111;
+    padding: 40px;
+    border-radius: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* GALLERY */
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* CTA */
+.cta {
+    background: url('https://images.unsplash.com/photo-1547592180-85f173990554') center/cover no-repeat;
+    position: relative;
+    text-align: center;
+}
+
+.cta::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* CONTACT */
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 220px;
+    position: relative;
+    background: #111;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="img/F.png" alt="logo" class="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Edu">Education</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Acco">Accomplishment Report</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://docs.google.com/document/d/1-GPm1oJ3Iwd1BcUXIv4TNKJMrr8KC0ss/edit?usp=sharing&ouid=109295065180999958710&rtpof=true&sd=true" target="_blank">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<section id="home" style="background-image: url('img/background.jpg');">
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-8 text-white">
-              <div class="content">
-                  <h1 class="display-4 font-weight-bold mb-4">Welcome to My Portfolio</h1>
-                  <p class="lead mb-4">I'm Francis Jay Rotol, a passionate individual dedicated to learning and problem-solving. Let's make a meaningful impact together!</p>
-                  <p class="font-italic">I thrive in dynamic environments where challenges abound, providing opportunities for growth and innovation. With a keen eye for detail and a knack for thinking outside the box, I'm dedicated to tackling tasks with efficiency and precision. Whether it's mastering new skills or finding creative solutions to complex problems, I approach every endeavor with enthusiasm and determination. I believe in the power of continuous learning and strive to adapt and evolve in an ever-changing world.</p>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-
-
-
-
-
-<section id="Edu">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="education-item">
-          <h2>Holy Trinity Academy of Loay</h2>
-          <p class="education-desc"><b>Junior and Senior High School</b></p>
-          <p>I was a computer system services awardee in grade 12 and got the best research award with my group.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="education-item">
-          <h2>Center for Industrial Technology and Enterprise (CITE)</h2>
-          <p class="education-desc"><b>Diploma in Computer Engineering Technology</b></p>
-          <ul class="education-list">
-            <li>Obtained a GWA of 1.55 in the 1st Trimester (June 2022)</li>
-            <li>CSS NC II Holder (August 2022)</li>
-            <li>EPAS NC II Holder (September 2022)</li>
-          </ul>
-        </div>
-      </div>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">FUSSY CATERER</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#shop">Shop</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="education-item">
-          <h2>Villalimpia Elementary School</h2>
-          <p class="education-desc"><b>Elementary School</b></p>
-          <p>I was a consistent 2nd honor student and consistent best in math awardee.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="education-item">
-          <h2>Core Competencies</h2>
-          <p class="education-desc"><b>Computer Engineering Technology</b></p>
-          <ul class="education-list">
-            <li>Working knowledge in MS Word, MS Excel, MS PowerPoint, MS Publisher</li>
-            <li>Set up and maintain local and wide area networks and install hardware and software applications</li>
-            <li>Design web pages and other similar computer graphics and multimedia applications such as Adobe Photoshop</li>
-            <li>Design publications using Adobe PageMaker, Corel Draw, and similar software</li>
-            <li>Proficient in internet use and e-mail correspondence</li>
-            <li>Proficient at troubleshooting computer problems</li>
-            <li>A lot of experience installing CCTV systems</li>
-            <li>Excel in providing effective tech support</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="Certificates" class="certificate-section">
-  <h2>Certificates</h2>
-  <div class="certificate-container">
-      <div class="certificate-item">
-          <h3>Cisco CCNA7: Switching, Routing, and Wireless Essentials</h3>
-          <p>Completed: 29 Oct 2022</p>
-          <embed src="img/jay6.pdf" type="application/pdf" />
-      </div>
-      <div class="certificate-item">
-          <h3>Cisco CCNA7: Enterprise Networking, Security, and Automation</h3>
-          <p>Completed: 26 Jan 2023</p>
-          <embed src="img/jay7.pdf" type="application/pdf" />
-      </div>
-      
-  </div>
-</section>
+</div>
 
-<section id="Acco" class="pt-5 pb-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Accomplishment Report: Anjo World Theme Park</h2>
-
-        <article class="mb-5">
-            <h3 class="mb-3">Introduction</h3>
-            <p>During my DTS (Dual Training System) at Anjo World Theme Park, I dedicated myself to enhancing the operational efficiency and security of the park. This journey has equipped me with valuable skills in CCTV operation and technical support, reflecting my commitment to excellence.</p>
-        </article>
-
-        <article class="mb-5">
-            <h3 class="mb-3">CCTV Operation</h3>
-            <p>My experience with CCTV systems at Anjo World has been extensive and fulfilling. Here are some key highlights:</p>
-            <ul class="list-unstyled pl-3">
-                <li class="mb-2">
-                    <i class="fas fa-video mr-2"></i>
-                    <strong>Learned CCTV Application:</strong> I gained comprehensive knowledge of CCTV systems and their applications within the park's infrastructure.
-                </li>
-                <li class="mb-2">
-                    <i class="fas fa-tasks mr-2"></i>
-                    <strong>Implemented CCTV Protocols:</strong> Successfully applied CCTV protocols to monitor various sections of the theme park, ensuring the safety and security of guests and staff.
-                </li>
-                <li>
-                    <i class="fas fa-tools mr-2"></i>
-                    <strong>Troubleshooting Expertise:</strong> Developed troubleshooting expertise to promptly address any technical issues or anomalies within the CCTV network, ensuring uninterrupted surveillance.
-                </li>
-            </ul>
-        </article>
-
-        <article class="mb-5">
-            <h3 class="mb-3">Technical Support Proficiency</h3>
-            <p>Providing technical support at Anjo World allowed me to hone my skills in a dynamic environment. Some key accomplishments include:</p>
-            <ul class="list-unstyled pl-3">
-                <li class="mb-2">
-                    <i class="fas fa-headset mr-2"></i>
-                    <strong>Technical Support Skills:</strong> Demonstrated proficiency in providing technical support to park visitors and staff, resolving a wide range of issues related to park facilities and equipment.
-                </li>
-                <li class="mb-2">
-                    <i class="fas fa-smile mr-2"></i>
-                    <strong>Customer Satisfaction:</strong> Received positive feedback from patrons and colleagues for delivering prompt and effective technical assistance, enhancing overall customer satisfaction.
-                </li>
-                <li>
-                    <i class="fas fa-book-reader mr-2"></i>
-                    <strong>Continuous Learning:</strong> Maintained a proactive approach to learning emerging technologies and solutions, ensuring up-to-date knowledge to address evolving technical challenges.
-                </li>
-            </ul>
-        </article>
-
-        <article class="mb-5">
-            <h3 class="mb-3">Photoshop Skills</h3>
-            <p>My skills in Adobe Photoshop have been instrumental in creating engaging visual content. Here are some key highlights:</p>
-            <ul class="list-unstyled pl-3">
-                <li class="mb-2">
-                    <i class="fas fa-paint-brush mr-2"></i>
-                    <strong>Graphic Design:</strong> Developed and designed graphics for various projects, enhancing the visual appeal and communication of key messages.
-                </li>
-                <li class="mb-2">
-                    <i class="fas fa-layer-group mr-2"></i>
-                    <strong>Photo Editing:</strong> Proficient in photo editing techniques, including retouching, color correction, and image manipulation.
-                </li>
-                <li>
-                    <i class="fas fa-file-image mr-2"></i>
-                    <strong>Creative Projects:</strong> Successfully completed creative projects that required advanced Photoshop skills, contributing to marketing and promotional efforts.
-                </li>
-            </ul>
-        </article>
-        <article class="mb-5">
-          <h3 class="mb-3">Printer Troubleshooting</h3>
-          <p>My experience in printer troubleshooting has been significant during my tenure at Anjo World Theme Park. Here are some key accomplishments:</p>
-          <ul class="list-unstyled pl-3">
-              <li class="mb-2">
-                  <i class="fas fa-print mr-2"></i>
-                  <strong>Printer Maintenance:</strong> Conducted routine maintenance on printers, ensuring optimal performance and minimizing downtime.
-              </li>
-              <li class="mb-2">
-                  <i class="fas fa-exclamation-triangle mr-2"></i>
-                  <strong>Troubleshooting Expertise:</strong> Identified and resolved printer issues promptly, including paper jams, connectivity issues, and print quality problems.
-              </li>
-              <li>
-                  <i class="fas fa-wrench mr-2"></i>
-                  <strong>Hardware Repair:</strong> Proficient in diagnosing and repairing printer hardware components, contributing to uninterrupted operation of printing facilities.
-              </li>
-          </ul>
-      </article>
-        <article>
-            <h3 class="mb-3">Conclusion</h3>
-            <p>My tenure at Anjo World Theme Park has been both enriching and rewarding. It has allowed me to develop crucial skills in CCTV operation, technical support, and Photoshop, which I believe will be instrumental in my professional growth. I am grateful for the opportunity and look forward to continuing my journey in the tech industry, contributing to the success and safety of the organizations I work with.</p>
-        </article>
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Luxury Culinary Experiences</h1>
+        <p>Upscale Catering • Charcuterie Art • Private Chef Services • Gift Baskets • Cooking Lessons</p>
+        <button class="btn">Explore Now</button>
     </div>
 </section>
-<section id="Images">
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-              <div class="row justify-content-center">
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay.jpg" alt="Image 1" class="img-fluid rounded shadow">
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay1.jpg" alt="Image 2" class="img-fluid rounded shadow">
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay2.png" alt="Image 3" class="img-fluid rounded shadow">
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay3.jpg" alt="Image 4" class="img-fluid rounded shadow">
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay4.jpg" alt="Image 5" class="img-fluid rounded shadow">
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <img src="img/jay5.jpg" alt="Image 6" class="img-fluid rounded shadow">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About The Brand</h2>
+    <p class="sub">
+        A woman-owned luxury culinary brand in New Jersey delivering elevated dining experiences, curated gifting,
+        and unforgettable private chef services for discerning clients.
+    </p>
 </section>
-<section id="Iframe" class="iframe-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwUMDTzqUgDh4YRm8DlhDBSVSQWhPYeN-oDeVcixA6LUz3-Lmuw6Z2mGptgWoPCgmxrJQ8NcdV6udV/pubhtml?gid=246184847&amp;single=true&amp;widget=true&amp;headers=false" frameborder="2" width="100%" height="400"></iframe>
-      </div>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Signature Services</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564">
+            <div class="card-content">
+                <h3>Catering</h3>
+                <p>Luxury event dining experiences.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+            <div class="card-content">
+                <h3>Charcuterie Art</h3>
+                <p>Elegant handcrafted boards.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f">
+            <div class="card-content">
+                <h3>Private Chef</h3>
+                <p>In-home gourmet dining.</p>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
-<section id="Contact" class="contact-section bg-light">
-  <div class="container text-center">
-      <h2>Contact Information</h2>
-      <p class="contact-item"><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:rotoljay03@gmail.com">rotoljay03@gmail.com</a></p>
-      <p class="contact-item"><i class="bi bi-phone"></i> Phone: +63 9512352816</p>
-      <p class="contact-item"><i class="bi bi-facebook"></i> Facebook: <a href="https://www.facebook.com/jayrotol05">Francis Jay Rotol</a></p>
-      <p class="contact-item"><i class="bi bi-instagram"></i> Instagram: <a href="https://www.instagram.com/jay.rtl/?fbclid=IwAR2l4fjwL4OFezHjDBk36BAOtStUgDYlruwm8UQhUQTYaaoL4r0PHdeZ1yo">Francis Jay D. Rotol</a></p>
-      <p class="contact-item"><i class="bi bi-whatsapp"></i> WhatsApp: <a href="https://wa.me/your_whatsapp_number">+629512352816</a></p>
-      <p class="contact-item"><i class="bi bi-chat-left-dots"></i> Viber: <a href="viber://chat?number=your_viber_number">+629512352816</a></p>
-      <button class="btn btn-primary" onclick="composeEmail()">Send Message</button>
-  </div>
 </section>
 
+<!-- SHOP -->
+<section id="shop">
+    <h2>Luxury Shop</h2>
 
-<script>
-  function composeEmail() {
-      var subject = "Hello Francis Jay"; 
-      var body = "Dear Francis Jay,\n\nI would like to connect with you...";
-      var mailtoLink = "mailto:rotoljay03@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      window.location.href = mailtoLink;
-  }
-</script>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+            <div class="card-content">
+                <h3>Gift Basket</h3>
+                <p class="price">$120+</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
-<script src="js/img.js"></script>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+            <div class="card-content">
+                <h3>Charcuterie Box</h3>
+                <p class="price">$85+</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+    <h2>Client Review</h2>
+    <div class="testimonial">
+        “Absolutely stunning presentation and unforgettable flavors. A true luxury experience.”
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Gallery</h2>
+    <p class="sub">A glimpse into our luxury culinary artistry</p>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="gallery 1">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba" alt="gallery 2">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="gallery 3">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033" alt="gallery 4">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="gallery 5">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" alt="gallery 6">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+    <div class="cta-content">
+        <h2>Book a Luxury Experience</h2>
+        <p>Let’s create something unforgettable together.</p>
+        <button class="btn">Get Started</button>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button class="btn">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Fussy Caterer Creations LLC | Luxury Culinary Experiences
+</footer>
 
 </body>
 </html>
